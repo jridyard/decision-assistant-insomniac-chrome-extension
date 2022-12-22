@@ -1,0 +1,82 @@
+{
+    "name": "Decision Assistant",
+    "description": "Enables pullers to communicate with their group leader to make buy/pass decisions on tickets while on the checkout page.",
+    "manifest_version": 2,
+    "version": "2.1.7",
+    "background": {
+        "service_worker": "bg.js",
+        "run_at": "document_start"
+    },
+    "permissions": [
+        "*://checkout.ticketmaster.com/*", "*://*.ticketmaster.com/checkout/*", "*://checkout.livenation.com/*", "*://checkout.ticketmaster.ca/*", "*://*.ticketmaster.ca/checkout/*", "https://discord.com/*",
+        "<all_urls>",
+        "storage",
+        "notifications",
+        "tabs",
+        "alarms"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://checkout.livenation.com/*",
+                "*://checkout.livenation.ca/*",
+                "*://checkout.ticketmaster.com/*",
+                "*://checkout.ticketmaster.ca/*",
+                "*://*.ticketmaster.com/checkout/*",
+                "*://*.ticketmaster.ca/checkout/*"
+            ],
+            "js": [
+                "libraries/js/sweetalert.js",
+                "libraries/js/bindly.js",
+                "main/content.js"
+              ],
+            "css": [
+                "libraries/css/animate.min.css",
+                "libraries/css/three-dots-blue.min.css",
+                "css/sweetalert_styling.css"
+            ]
+        },
+        {
+            "matches": [
+                "*://*.ticketmaster.com/*",
+                "*://*.livenation.com/*",
+                "*://*.ticketmaster.ca/*",
+                "*://*.livenation.ca/*"
+            ],
+            "js": [
+                "global_helpers.js",
+                "persist/persist_content.js",
+                "persist/notify_on_TM_LN_enter.js"
+            ]
+        },
+        {
+            "matches": [
+                "*://discord.com/*",
+                "*://*.discord.com/*"
+            ],
+            "js": [
+                "global_helpers.js",
+                "libraries/js/jquery.js",
+                "libraries/js/bindly.js",
+                "discord/discord.js"
+            ],
+            "css": [
+                "discord/discord.css"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_title": "Decision Assistant"
+    },
+    "web_accessible_resources": [
+        "images/*",
+        "main/*",
+        "extension_pages/*"
+    ]
+}

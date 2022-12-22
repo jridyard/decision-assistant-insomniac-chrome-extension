@@ -1,0 +1,281 @@
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="horizontal-menu-template"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>Onboarding - Decision Assistant</title>
+
+  <meta name="description" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css">
+  <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css">
+  <!-- <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css"> -->
+  <link rel="stylesheet" href="../../assets/vendor/css/theme-deep-blue.css" class="template-customizer-theme-css">
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/bs-stepper/bs-stepper.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/tagify/tagify.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
+
+  <style>
+
+  </style>
+
+  <style>
+      .swal2-deny {
+        background-color: #1ebd53 !important;
+      }
+
+      .swal2-confirm {
+        background-color: #145aff !important;
+      }
+      
+      .go-back-button {
+        background-color: #797979 !important;
+      }
+
+      .swal2-styled.swal2-confirm:focus {
+        box-shadow: 0 0 0 3px rgb(20 90 255 / 50%) !important;
+      }
+
+      .swal2-styled.swal2-deny:focus {
+        box-shadow: 0 0 0 3px rgb(30 189 83 / 50%) !important;
+      }
+
+      .swal2-styled.swal2-deny.go-back-button:focus {
+        box-shadow: 0 0 0 3px rgb(121 121 121 / 50%) !important;
+      }
+
+      .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+        background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1));
+      }
+  </style>
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <style type="text/css">
+    .layout-menu-fixed .layout-navbar-full .layout-menu,
+    .layout-menu-fixed-offcanvas .layout-navbar-full .layout-menu {
+      top: 0px !important;
+    }
+    .layout-page {
+      padding-top: 0px !important;
+    }
+    .content-wrapper {
+      padding-bottom: 0px !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
+    <div class="layout-container">
+
+      <!-- Navbar -->
+      <!-- REMOVED -->
+      <!-- / Navbar -->
+
+      <!-- Layout container -->
+      <div class="layout-page">
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+          <!-- Menu -->
+          <!-- REMOVED -->
+          <!-- / Menu -->
+
+          <!-- Content -->
+
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4">
+              <span class="text-muted fw-light">Decision Assistant /</span> Onboarding
+            </h4>
+
+            <!-- Property Listing Wizard -->
+            <div id="wizard-property-listing" class="bs-stepper vertical mt-2 linear">
+              <div class="bs-stepper-header" style="display: none;">
+                <div class="step active" data-target="#personal-details">
+                  <button type="button" class="step-trigger" aria-selected="true">
+                    <span class="bs-stepper-circle">
+                      <i class="bx bx-user"></i>
+                    </span>
+                    <span class="bs-stepper-label">
+                      <span class="bs-stepper-title">Personal Details</span>
+                      <span class="bs-stepper-subtitle">Your Name/Email</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#property-details">
+                  <button type="button" class="step-trigger" aria-selected="false" disabled="disabled">
+                    <span class="bs-stepper-circle">
+                      <i class="bx bx-home"></i>
+                    </span>
+                    <span class="bs-stepper-label">
+                      <span class="bs-stepper-title">Property Details</span>
+                      <span class="bs-stepper-subtitle">Property Type</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#property-features">
+                  <button type="button" class="step-trigger" aria-selected="false" disabled="disabled">
+                    <span class="bs-stepper-circle">
+                      <i class="bx bx-star"></i>
+                    </span>
+                    <span class="bs-stepper-label">
+                      <span class="bs-stepper-title">Property Features</span>
+                      <span class="bs-stepper-subtitle">Bedrooms/Floor No</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#property-area">
+                  <button type="button" class="step-trigger" aria-selected="false" disabled="disabled">
+                    <span class="bs-stepper-circle">
+                      <i class="bx bx-map"></i>
+                    </span>
+                    <span class="bs-stepper-label">
+                      <span class="bs-stepper-title">Property Area</span>
+                      <span class="bs-stepper-subtitle">Covered Area</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="line"></div>
+                <div class="step" data-target="#price-details">
+                  <button type="button" class="step-trigger" aria-selected="false" disabled="disabled">
+                    <span class="bs-stepper-circle">
+                      <i class="bx bx-dollar"></i>
+                    </span>
+                    <span class="bs-stepper-label">
+                      <span class="bs-stepper-title">Price Details</span>
+                      <span class="bs-stepper-subtitle">Expected Price</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="bs-stepper-content">
+
+                <div id="wizard-property-listing-form">
+                  <!-- Personal Details -->
+                  <div id="personal-details" class="content active dstepper-block fv-plugins-bootstrap5 fv-plugins-framework">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-md mb-md-0 mb-2">
+                            <div class="form-check custom-option custom-option-icon">
+                              <label class="form-check-label custom-option-content" for="brokerRole">
+                                <span class="custom-option-body">
+                                  <i class="bx bx-crown"></i>
+                                  <span class="custom-option-title"> I am the Broker </span>
+                                  <small>
+                                    Manages the pullers who cart the tickets.
+                                  </small>
+                                </span>
+                                <input name="plUserType" class="form-check-input" type="radio" value="2" id="brokerRole">
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md mb-md-0 mb-2">
+                            <div class="form-check custom-option custom-option-icon">
+                              <label class="form-check-label custom-option-content" for="pullerRole">
+                                <span class="custom-option-body">
+                                  <i class="tf-icons bx bx-cart-alt"></i>
+                                  <span class="custom-option-title"> I am a Puller </span>
+                                  <small>
+                                    Carts the tickets for the broker to resell.
+                                  </small>
+                                </span>
+                                <input name="plUserType" class="form-check-input" type="radio" value="3" id="pullerRole">
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 d-flex justify-content-center" style="margin-top: 75px">
+                        <button class="btn btn-primary btn-next">
+                          <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span>
+                          <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
+                        </button>
+                      </div>
+
+                      <div class="col-12 d-flex justify-content-center" style="margin-top: 15px;">
+                        <div class="fv-plugins-message-container invalid-feedback" id="noRoleSelectedWarning" style="display: none;">
+                          <div data-field="plRoleSelection" data-validator="notSelected">Please select your role</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <!--/ Property Listing Wizard -->
+          </div>
+          <!--/ Content -->
+
+          <!-- Footer -->
+          <footer class="content-footer footer bg-footer-theme">
+            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+              <div class="mb-2 mb-md-0">
+                © 2022, made with ❤️ by
+                <a href="https://outsize.io" target="_blank" class="footer-link fw-bolder">Outsize</a>
+              </div>
+              <!-- <div>
+                <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                <a
+                  href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                  target="_blank"
+                  class="footer-link me-4"
+                  >Documentation</a
+                >
+
+                <a
+                  href="https://themeselection.com/support/"
+                  target="_blank"
+                  class="footer-link d-none d-sm-inline-block"
+                  >Support</a
+                >
+              </div> -->
+            </div>
+          </footer>
+          <!-- / Footer -->
+
+          <div class="content-backdrop fade"></div>
+        </div>
+        <!--/ Content wrapper -->
+      </div>
+
+      <!--/ Layout container -->
+    </div>
+  </div>
+
+  <script src="../../../global_helpers.js"></script>
+
+  <script src="../../assets/js/sweetalert.js"></script>
+  <script src="../../assets/js/onboarding.js"></script>
+
+</body></html>

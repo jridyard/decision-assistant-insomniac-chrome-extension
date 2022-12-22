@@ -1,0 +1,25 @@
+/* 
+.swal2-timer-progress-bar {
+    width: 100%;
+    height: .25em;
+    background: rgb(255 255 255);
+}
+.container-1yy5xN {
+    display: none !important;
+} */
+
+.embedFooterText-2Mc7H9[bindly="bound"] {
+    background: #5865f2;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+.embedFooterText-2Mc7H9[bindly="bound"].less-than-3-mins {
+    background: #f75100;
+}
+
+.embedFooterText-2Mc7H9[bindly="bound"].less-than-1-min {
+    background: #c4181a !important;
+}

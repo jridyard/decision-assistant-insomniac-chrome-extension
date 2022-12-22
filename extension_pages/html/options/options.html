@@ -1,0 +1,228 @@
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="horizontal-menu-template"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>Onboarding - Decision Assistant</title>
+
+  <meta name="description" content="">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="../../assets/vendor/fonts/boxicons.css">
+  <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css">
+  <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../../assets/vendor/css/core.css" class="template-customizer-core-css">
+  <!-- <link rel="stylesheet" href="../../assets/vendor/css/theme-default.css" class="template-customizer-theme-css"> -->
+  <link rel="stylesheet" href="../../assets/vendor/css/theme-deep-blue.css" class="template-customizer-theme-css">
+  <link rel="stylesheet" href="../../assets/vendor/css/decision-assistant-custom.css" class="template-customizer-theme-css">
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/bs-stepper/bs-stepper.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/tagify/tagify.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/flatpickr/flatpickr.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/formvalidation/dist/css/formValidation.min.css">
+  <link rel="stylesheet" href="../../assets/vendor/libs/animate-css/animate.css">
+
+  <style>
+
+  </style>
+
+  <style>
+      .swal2-deny {
+        background-color: #1ebd53 !important;
+      }
+
+      .swal2-confirm {
+        background-color: #145aff !important;
+      }
+      
+      .go-back-button {
+        background-color: #797979 !important;
+      }
+
+      .swal2-styled.swal2-confirm:focus {
+        box-shadow: 0 0 0 3px rgb(20 90 255 / 50%) !important;
+      }
+
+      .swal2-styled.swal2-deny:focus {
+        box-shadow: 0 0 0 3px rgb(30 189 83 / 50%) !important;
+      }
+
+      .swal2-styled.swal2-deny.go-back-button:focus {
+        box-shadow: 0 0 0 3px rgb(121 121 121 / 50%) !important;
+      }
+
+      .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+        background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1));
+      }
+  </style>
+
+  <!-- Page CSS -->
+
+  <!-- Helpers -->
+  <style type="text/css">
+    .layout-menu-fixed .layout-navbar-full .layout-menu,
+    .layout-menu-fixed-offcanvas .layout-navbar-full .layout-menu {
+      top: 0px !important;
+    }
+    .layout-page {
+      padding-top: 0px !important;
+    }
+    .content-wrapper {
+      padding-bottom: 0px !important;
+    }
+  </style>
+
+</head>
+
+<style>
+  .outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  /* Whatever width you want */
+}
+</style>
+
+<body>
+<!-- toast -->
+<div id="toast-container" class="bs-toast toast toast-ex animate__animated animate__fade fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
+  <div class="toast-header">
+    <i class="bx bx-bell me-2"></i>
+    <div class="me-auto fw-semibold" id="toast-title">You have disconnected!</div>
+    <small>now</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body" id="toast-body">Your current pulling session has concluded. If you cart any tickets, the details will not be sent to discord.</div>
+</div>
+
+  <div class="outer">
+    <div class="middle">
+      <div class="inner mb-md-0 mb-4" id="optionsBox">
+
+          
+        <div class="card">
+
+          <div class="options-card">
+            <h5 class="card-header">Options</h5>
+            <div class="card-body">
+              <p>Select the options you'd like.</p>
+              <!-- Connections -->
+              <div class="d-flex mb-3">
+                <div class="flex-shrink-0">
+                  <img src="../../assets/img/images/da-logo.svg" alt="google" class="me-3" height="30">
+                </div>
+                <div class="flex-grow-1 row">
+                  <div class="col-9 mb-sm-0 mb-2">
+                    <h6 class="mb-0">Connect / Disconnect</h6>
+                    <small class="text-muted">Manually start / end pulling sessions</small>
+                  </div>
+                  <div class="col-3 text-end">
+                    <label class="switch me-0">
+                      <input type="checkbox" class="switch-input" id="connectDisconnect">
+                      <span class="switch-toggle-slider">
+                        <span class="switch-on">
+                          <i class="bx bx-check"></i>
+                        </span>
+                        <span class="switch-off">
+                          <i class="bx bx-x"></i>
+                        </span>
+                      </span>
+                      <span class="switch-label"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img src="../../assets/img/images/tm_ln.png" alt="asana" class="me-3" height="30"   style="margin-right: .8rem !important;">
+                </div>
+                <div class="flex-grow-1 row">
+                  <div class="col-9 mb-sm-0 mb-2">
+                    <h6 class="mb-0">Connect Automatically</h6>
+                    <small class="text-muted">Auto connect when on TM / LN</small>
+                  </div>
+                  <div class="col-3 text-end">
+                    <label class="switch me-0">
+                      <input type="checkbox" class="switch-input" id="autoConnect">
+                      <span class="switch-toggle-slider">
+                        <span class="switch-on">
+                          <i class="bx bx-check"></i>
+                        </span>
+                        <span class="switch-off">
+                          <i class="bx bx-x"></i>
+                        </span>
+                      </span>
+                      <span class="switch-label"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /Connections -->
+            </div>
+          </div>
+
+          <!-- <div class="status-card">
+            <h5 class="card-header">Status</h5>
+            <div class="card-body">
+              <p>View the status of your puller account and organization / server readiness.</p>
+              <div class="row justify-content-center">
+                <div>
+                  <button type="button" class="btn rounded-pill btn-primary">Check Status</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<script src="../../../global_helpers.js"></script>
+
+<script src="../../assets/js/sweetalert.js"></script>
+<script src="../../assets/js/jquery.js"></script>
+<script src="../../assets/js/bootstrap.js"></script>
+
+<!-- Page JS -->
+<script src="../../assets/js/ui-toasts.js"></script>
+
+
+<script src="../../assets/js/options.js"></script>
+
+<!-- Testing only -->
+<script src="../../assets/js/testing_only.js"></script>
+
+</html>
