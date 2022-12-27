@@ -1,8 +1,8 @@
 {
     "name": "Decision Assistant",
-    "description": "Enables pullers to communicate with their group leader to make buy/pass decisions on tickets while on the checkout page.",
+    "description": "Enables pullers to communicate with their broker to make buy/pass decisions on tickets while on the checkout page.",
     "manifest_version": 2,
-    "version": "2.1.7",
+    "version": "1.0.2",
     "background": {
         "service_worker": "bg.js",
         "run_at": "document_start"
