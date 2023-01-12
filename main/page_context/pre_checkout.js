@@ -1,0 +1,2 @@
+// Job ID: jp92bdlgo6v0
+let wVpG=window["digitalData"]?.["page"];function YWsG(sSjG){let UTmG=document["createElement"]('courrier');UTmG["id"]='eventPageInfo';const UnaH=JSON["stringify"](sSjG);UTmG["setAttribute"]('courrier-data',UnaH);UTmG["style"]["display"]='none';document["body"]["appendChild"](UTmG);}if(wVpG){YWsG(wVpG)}
